@@ -46,15 +46,28 @@
       </form>
       <ul class="todo-list" id="todo-list"></ul>
     </section>
+
+    <section class="section">
+      <span class="eyebrow" style="color:var(--accent-2)">Privé — enkel voor jou</span>
+      <h1>Race-strategie</h1>
+      <p>Wat in welke tas, en wanneer eten/drinken. Vul de TODO's hieronder in via <code>assets/config.js</code> (<code>strategy</code>).</p>
+      <div class="grid cols-3" id="strategy-bags"></div>
+    </section>
+
+    <section class="section">
+      <h2>Voeding &amp; drank</h2>
+      <div class="grid cols-3" id="strategy-nutrition"></div>
+    </section>
   </main>
 
   <footer>
     <p>Admin-gedeelte · niet geïndexeerd · aparte toegangscode 🔒</p>
-    <p class="role-switch"><a href="index.html">Bekijk als vriend</a> · <a href="#" id="logout-admin-link">Log uit (admin)</a></p>
+    <p class="role-switch"><a href="index.html">Terug naar site</a> · <a href="#" id="logout-admin-link">Log uit (admin)</a></p>
   </footer>
 </div>
 
 <script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
 <script src="assets/todo.js"></script>
 <script>
   (function () {

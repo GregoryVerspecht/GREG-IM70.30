@@ -1,6 +1,5 @@
 /* ==================================================================
    APP.JS — rendert de inhoud van elke pagina op basis van config.js
-   Wordt pas uitgevoerd NA een geldige passcode (zie gate.js).
    ================================================================== */
 
 function fmtDate(d) {
@@ -148,4 +147,33 @@ function renderLogistics() {
     .join("");
 }
 
-/* Router: elke pagina zet window.renderPage vóór gate.js dit aanroept */
+/* ---------------- STRATEGIE (admin) ---------------- */
+function renderStrategy() {
+  const s = window.CONFIG.strategy;
+  const bagsWrap = document.getElementById("strategy-bags");
+  if (bagsWrap) {
+    bagsWrap.innerHTML = s.bags
+      .map(
+        (bag) => `
+        <div class="card">
+          <div class="k">${bag.label}</div>
+          <ul style="text-align:left; margin:8px 0 0; padding-left:20px">
+            ${bag.items.map((item) => `<li>${item}</li>`).join("")}
+          </ul>
+        </div>`
+      )
+      .join("");
+  }
+  const nutritionWrap = document.getElementById("strategy-nutrition");
+  if (nutritionWrap) {
+    nutritionWrap.innerHTML = s.nutrition
+      .map(
+        (n) => `
+        <div class="card">
+          <div class="k">${n.moment}</div>
+          <p style="margin-top:8px">${n.plan}</p>
+        </div>`
+      )
+      .join("");
+  }
+}

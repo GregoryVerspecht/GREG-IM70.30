@@ -1,8 +1,10 @@
 # IRONMAN 70.3 Luxembourg — vrienden & familie site
 
 Statische site voor GitHub Pages met live countdown, dag-planning, racedag-info
-(startnummer + tracker) en praktische info (hotel, kijkplekken). Plus een apart,
-niet-gelinkt admin-gedeelte met een persoonlijke to-do lijst.
+(startnummer + tracker), parcours in detail en praktische info (hotel, shuttle,
+kijkplekken) — publiek toegankelijk, geen login nodig. Plus een apart,
+niet-gelinkt admin-gedeelte met een persoonlijke to-do lijst en race-strategie,
+enkel voor jou.
 
 ## 1. GitHub Pages activeren
 1. Push deze bestanden naar de `main` branch van deze repo.
@@ -21,15 +23,13 @@ zichzelf automatisch opnieuw binnen ~1 minuut. Geen build-stap nodig.
 In `assets/config.js`, zoek `bib: "TODO"` onder `event` en vervang door je
 startnummer. Commit. Klaar — de racedag-pagina toont het meteen.
 
-## 4. Toegangscodes wijzigen (aanbevolen vóór je de link deelt)
-Er zijn 2 gescheiden codes:
-- **Vrienden-code** → geeft toegang tot Home/Planning/Racedag/Praktisch.
-- **Admin-code** → geeft toegang tot `/admin.html` (jouw persoonlijke to-do,
-  nergens gelinkt in de navigatie).
+## 4. Toegang
+De hoofdsite (Home/Planning/Racedag/Parcours/Praktisch) is **publiek** —
+geen code nodig, gewoon de link delen. Alleen `/admin.html` (jouw
+persoonlijke to-do + race-strategie) staat achter een eigen code, nergens
+gelinkt in de navigatie.
 
-Standaard staan ze op `MOSELLE2026` (vrienden) en `IM70ADMIN2026` (admin) —
-**verander deze** voor je de link deelt. Zo doe je dat:
-
+Admin-code wijzigen (aanbevolen vóór je de link deelt):
 1. Open eender welke pagina van de site in je browser.
 2. Open de developer console (F12 → tabblad *Console*).
 3. Plak dit (pas `"jouwnieuwecode"` aan):
@@ -39,34 +39,35 @@ Standaard staan ze op `MOSELLE2026` (vrienden) en `IM70ADMIN2026` (admin) —
    .map(x=>x.toString(16).padStart(2,'0')).join('');}
    h("jouwnieuwecode").then(console.log)
    ```
-4. Kopieer de hash die verschijnt naar `friendsPassHash` of `adminPassHash`
-   in `assets/config.js`.
+4. Kopieer de hash die verschijnt naar `adminPassHash` in `assets/config.js`.
 
 ## 5. Hoe "bot-proof" is dit echt?
-GitHub Pages is statische hosting — er is geen server die wachtwoorden kan
-afdwingen. Wat deze site wél doet:
+GitHub Pages is statische hosting. Wat deze site wél doet om ongewenst
+scrapen/indexeren te beperken:
 - De eigenlijke inhoud (planning, hotel, bib...) wordt pas in de pagina
-  geladen **na** een juiste code — een simpele `curl`/scraper die geen
-  JavaScript uitvoert, ziet dus niets bruikbaars.
+  geladen via JavaScript — een simpele `curl`/scraper die geen JS uitvoert,
+  ziet dus niets bruikbaars.
 - `robots.txt` + `noindex`-meta houden zoekmachines en de meeste
   link-preview bots buiten.
 - Het admin-gedeelte staat nergens gelinkt én heeft een eigen code.
 
 Wat het **niet** is: échte beveiliging tegen een gemotiveerde persoon die de
 broncode bekijkt. Zet dus geen bank- of paspoortgegevens in `config.js` —
-voor een privé vrienden-overzicht is dit ruim voldoende.
+voor een publieke vrienden-overzichtspagina zonder gevoelige info is dit
+ruim voldoende.
 
 ## Structuur
 ```
-index.html        Home — countdown, snel overzicht
-schedule.html      Planning per dag
-raceday.html       Startnummer, tracker, cutoff-tijden
-logistics.html      Hotel, parking, kijkplekken
-admin.html          (niet gelinkt) — persoonlijke to-do, eigen code
-assets/config.js    Alle inhoud + wachtwoord-hashes — dit bewerk je
-assets/style.css    Design
-assets/gate.js      Passcode-logica (vrienden)
-assets/app.js       Rendert de pagina's vanuit config.js
-assets/todo.js      To-do lijst logica (admin, localStorage)
-robots.txt          Weert zoekmachines
+index.html          Home — countdown, snel overzicht
+schedule.html        Planning per dag
+raceday.html         Startnummer, tracker, cutoff-tijden
+course.html          Parcours in detail — kaarten, wissels, kijktips
+logistics.html       Hotel, parking, shuttle, kijkplekken
+admin.html           (niet gelinkt) — persoonlijke to-do + race-strategie, eigen code
+assets/config.js     Alle inhoud + admin-wachtwoord-hash — dit bewerk je
+assets/style.css     Design
+assets/app.js        Rendert de pagina's vanuit config.js
+assets/todo.js       To-do lijst + strategie-render (admin, localStorage)
+assets/img/          Transitie-kaarten (T1/T2)
+robots.txt           Weert zoekmachines
 ```

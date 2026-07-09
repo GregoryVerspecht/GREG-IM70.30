@@ -53,6 +53,7 @@ function renderTodos() {
 
 function renderPage() {
   renderTodos();
+  renderStrategy();
   const form = document.getElementById("todo-add-form");
   const input = document.getElementById("todo-add-input");
   form.addEventListener("submit", (e) => {

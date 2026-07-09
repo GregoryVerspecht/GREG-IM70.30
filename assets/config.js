@@ -4,7 +4,8 @@
    - Vul de TODO's in met jouw eigen gegevens.
    - Op racedag: pas gewoon "bib" hieronder aan en commit via de
      GitHub website/app. Binnen ~1 minuut staat de site live-update.
-   - Wachtwoord wijzigen? Open de browser console (F12 -> Console) op
+   - De hoofdsite is publiek (geen login) — enkel /admin.html vraagt een code.
+   - Admin-wachtwoord wijzigen? Open de browser console (F12 -> Console) op
      eender welke pagina van de site en plak dit (pas "test123" aan):
 
        async function h(s){const b=await crypto.subtle.digest('SHA-256',
@@ -12,7 +13,7 @@
        .map(x=>x.toString(16).padStart(2,'0')).join('');}
        h("test123").then(console.log)
 
-     Kopieer de output-hash naar friendsPassHash of adminPassHash.
+     Kopieer de output-hash naar adminPassHash.
    ================================================================== */
 
 window.CONFIG = {
@@ -140,12 +141,45 @@ window.CONFIG = {
     }
   ],
 
-  // ---- WACHTWOORDEN (SHA-256 hashes, geen leesbare tekst) ----
-  // Standaard: vrienden-code = "MOSELLE2026" | admin-code = "IM70ADMIN2026"
-  // PAS DEZE AAN voor het publiceren — zie instructies bovenaan dit bestand.
+  // ---- ADMIN-WACHTWOORD (SHA-256 hash, geen leesbare tekst) ----
+  // Standaard: admin-code = "IM70ADMIN2026" — PAS DIT AAN, zie instructies bovenaan dit bestand.
   security: {
-    friendsPassHash: "ac15040b7a8de976106826a0aec57b083a7a1c02becb7995de79853d06332bda",
-    adminPassHash:   "6869cbacb81e1511587a06b1e91fddc32a485d771b2062fcb428b77d7ace2800"
+    adminPassHash: "6869cbacb81e1511587a06b1e91fddc32a485d771b2062fcb428b77d7ace2800"
+  },
+
+  // ---- RACE-STRATEGIE (enkel zichtbaar op /admin.html) ----
+  strategy: {
+    bags: [
+      {
+        label: "T1-tas (zwem → fiets)",
+        items: [
+          "TODO: helm",
+          "TODO: fietsschoenen",
+          "TODO: zonnebril",
+          "TODO: race-riem met nummer"
+        ]
+      },
+      {
+        label: "T2-tas (fiets → loop)",
+        items: [
+          "TODO: loopschoenen",
+          "TODO: pet / zonnebril-wissel",
+          "TODO: extra gels"
+        ]
+      },
+      {
+        label: "White bag / special needs",
+        items: [
+          "TODO: extra nutrition",
+          "TODO: extra kledij bij regen"
+        ]
+      }
+    ],
+    nutrition: [
+      { moment: "Voor de start", plan: "TODO: bv. ontbijt om 05:00, laatste gel 15 min voor start" },
+      { moment: "Fiets", plan: "TODO: bv. elke 20 min een gel + slokken water/sportdrank" },
+      { moment: "Loop", plan: "TODO: bv. om de 5 km gel of water aan bevoorradingspost" }
+    ]
   },
 
   todoDefaults: [

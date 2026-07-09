@@ -9,20 +9,7 @@
 </head>
 <body>
 
-<div id="gate" class="gate">
-  <div class="gate-card">
-    <span class="dot"></span>
-    <h1>Privé site</h1>
-    <p>Vraag de toegangscode aan Gregory om de planning, racedag-info en logistiek te bekijken.</p>
-    <form id="gate-form">
-      <input id="gate-input" type="password" placeholder="Toegangscode" autocomplete="off" required />
-      <button class="btn accent" type="submit">Binnen</button>
-      <div id="gate-err" class="err"></div>
-    </form>
-  </div>
-</div>
-
-<div id="content" class="hidden">
+<div id="content">
   <nav class="nav">
     <div class="wrap">
       <span class="brand"><span class="dot"></span> IM 70.3 Luxembourg</span>
@@ -92,20 +79,14 @@
 
   <footer>
     <p>Privé site voor vrienden &amp; familie · niet geïndexeerd door zoekmachines 🔒</p>
-    <p class="role-switch"><a href="admin.html">Admin-gedeelte</a> · <a href="#" id="logout-link">Log uit</a></p>
+    <p class="role-switch"><a href="admin.html">Admin-gedeelte</a></p>
   </footer>
 </div>
 
 <script src="assets/config.js"></script>
-<script src="assets/gate.js"></script>
 <script src="assets/app.js"></script>
 <script>
-  window.renderPage = renderHome;
-  initGate();
-  document.getElementById("logout-link").addEventListener("click", function (e) {
-    e.preventDefault();
-    logoutFriends();
-  });
+  renderHome();
 </script>
 </body>
 </html>
