@@ -19,28 +19,73 @@ window.CONFIG = {
 
   event: {
     name: "IRONMAN 70.3 Luxembourg",
-    tagline: "Région Moselle — zwemmen in Duitsland, fietsen in Frankrijk, lopen in Luxemburg",
-    athleteName: "TODO: jouw naam",
+    tagline: "Eerste (halve) triatlon van Greg!",
+    athleteName: "Greg",
     raceDate: "2026-07-12T08:00:00+02:00",     // startuur race — check athlete guide voor exacte wave-tijd
     swimStart: "08:00",
     location: "Wintrange, Canton Remich, Luxemburg",
     distances: { swim: "1.9 km", bike: "90 km", run: "21.1 km" },
-    bib: "TODO",                                // <-- update dit op racedag!
-    goalTime: "TODO: bv. 5u30",
-    trackerNote: "Bib-nummer hierboven invullen op de officiële IRONMAN tracker om live te volgen.",
+    swimStartMapUrl: "https://www.google.com/maps/place/49%C2%B032'10.9%22N+6%C2%B021'35.8%22E/@49.536358,6.359951,17z",
+    finishName: "Freibad Remich",
+    finishMapUrl: "https://www.google.com/maps/place/Freibad+Remich/@49.5399002,6.3612563,714m",
+    bib: "Gregory Verspecht",                   // naam volstaat om op te zoeken in de tracker-app — update naar het echte bib-nummer op racedag als je dat liever hebt
+    goalTime: "Sub 7 uur",
+    trackerNote: "Volg me live via de officiële IRONMAN Tracker-app.",
     trackerUrl: "https://www.ironman.com/im703-luxembourg-results",
-    officialSite: "https://www.ironman.com/races/im703-luxembourg"
+    trackerAppStoreUrl: "https://apps.apple.com/us/app/ironman-tracker/id1183983404",
+    trackerPlayStoreUrl: "https://play.google.com/store/apps/details?id=me.rtrt.app.irma",
+    trackerSteps: [
+      "Download de gratis app “IRONMAN Tracker” (App Store of Google Play) — of gebruik de web-tracker hierboven.",
+      "Zoek het evenement “IRONMAN 70.3 Luxembourg” op en voeg het toe.",
+      "Ga naar de tracker en zoek de deelnemer op — naam of startnummer (bib), zie hierboven (wordt op racedagochtend ingevuld).",
+      "Volg live tussentijden, positie op de kaart en zet meldingen aan per splittijd."
+    ],
+    trackerHiddenNote: "Verschijnt de naam niet? Sommige atleten zetten hun tracking op 'privé' — dat is normaal.",
+    officialSite: "https://www.ironman.com/races/im703-luxembourg",
+    supportersUrl: "https://www.ironman.com/races/im703-luxembourg/supporters"
+  },
+
+  course: {
+    intro: "Eén lus door drie landen: zwemmen in de Moselle, fietsen door Luxemburg, Duitsland en Frankrijk, lopen in 3 ronden langs de rivier in Remich. (Officiële cijfers uit de IRONMAN-parcourskaarten.)",
+    officialCourseUrl: "https://www.ironman.com/races/im703-luxembourg/course",
+    swim: {
+      title: "Zwemmen — 1.9 km, 1 ronde",
+      text: "Door de Moselle net onder Remich. De swim-out ligt vlak bij de transitiezone — heel kort van water naar fiets."
+    },
+    bike: {
+      title: "Fietsen — 90 km, 1 lus, 580 hm",
+      text: "Vanuit Remich eerst richting Grevenmacher (Duitse grens), dan het binnenland in via Moutfort, Contern en Syren, langs Filsdorf — daar ligt de bike-cutoff (12:55) — en Mondorf-les-Bains, en tot slot een lus door Frankrijk (Schengen, Perl) terug naar Remich. Bevoorrading rond km 20, 40 en 70."
+    },
+    run: {
+      title: "Lopen — 21.1 km, 3 ronden",
+      text: "3 heen-en-terugronden van elk ~7 km langs de Moselle-promenade in Remich — amper 40 hoogtemeters, dus vrijwel vlak. 4 bevoorradingsposten per ronde (2 per richting)."
+    },
+    spectatorTip: "De loop is 3 ronden heen-en-terug in Remich zelf — blijf op één plek langs de promenade en je ziet je atleet tot 6 keer voorbijkomen. Het fietsparcours passeert kort Duitsland en een stuk Frankrijk (Schengen); hou rekening met grensoverschrijdend verkeer als je daar wil gaan kijken.",
+    transition: {
+      title: "Wissels (T1 & T2)",
+      text: "Beide wissels liggen op dezelfde plek vlak bij start/finish in Remich, met wisseltenten en toiletten aan beide uiteinden. T1 (zwem→fiets): swim-in → wisseltent → fiets ophalen bij het rek → mount line vlak bij bike-out. T2 (fiets→loop): dismount line bij aankomst → fiets terug naar het rek → wisseltent → run-out."
+    }
   },
 
   logistics: {
-    hotelName: "TODO: naam hotel/verblijf",
-    hotelAddress: "TODO: adres",
-    checkIn: "TODO: bv. donderdag 9 juli",
+    hotelName: "Parc Hotel Alvisse",
+    hotelAddress: "120 Route d'Echternach, L-1453 Luxembourg",
+    hotelUrl: "https://www.parc-hotel.lu/fr/home",
+    checkIn: "Vrijdag 10 juli, 17:00 – 18:00",
     checkOut: "TODO: bv. maandag 13 juli",
-    parkingNote: "TODO: parking-info (bv. dichtsbijzijnde parking t.o.v. start/finish in Remich/Wintrange)",
+    parkingNote: "De Esplanade (N10) in Remich is op racedag afgesloten van 06:15 tot 19:15 — parkeren in het centrum is beperkt. Gebruik bij voorkeur een van de gratis shuttlebussen hieronder.",
     travelNote: "TODO: hoe raak je er als vriend/familie op eigen houtje (auto, trein Remich, ...)",
+    directionsUrl: "https://www.ironman.com/races/im703-luxembourg/directions",
+    shuttle: {
+      intro: "3 gratis shuttlelijnen (P+R → Remich) — handig als je zelf niet vlak bij start/finish geraakt.",
+      lines: [
+        { label: "A", route: "Stadtbredimus (P+R Centre Sportif) ↔ Remich (Rue Maatebierg)", toRemich: "04:55 – 07:15", fromRemich: "10:30 – 20:30", frequency: "elke 20 min" },
+        { label: "B", route: "Ellange / Mondorf-les-Bains (P+R Triangle Vert) ↔ Remich (Place Nico Klopp)", toRemich: "05:15 – 09:05", fromRemich: "15:00 – 21:30", frequency: "elke 10 min" },
+        { label: "C", route: "Besch (D) ↔ Nennig / Remich", toRemich: "04:55 – 19:55", fromRemich: "04:55 – 19:55 (beide richtingen doorlopend)", frequency: "elke 10 min" }
+      ]
+    },
     viewingSpots: [
-      "Start/finish-zone Remich — beste sfeer, groot scherm en speaker",
+      { text: "Start/finish-zone Remich (Freibad Remich) — beste sfeer, groot scherm en speaker", mapUrl: "https://www.google.com/maps/place/Freibad+Remich/@49.5399002,6.3612563,714m" },
       "TODO: kijkplek op het fietsparcours (Frankrijk-kant)",
       "TODO: kijkplek op het loopparcours (Luxemburg-kant)"
     ],
@@ -50,39 +95,38 @@ window.CONFIG = {
 
   schedule: [
     {
-      day: "Donderdag 9 juli",
+      day: "Vrijdag 10 juli",
       tag: "Aankomst",
       items: [
-        { time: "TBC", desc: "Aankomst Luxemburg / inchecken verblijf" },
-        { time: "TBC", desc: "IRONMAN Village opent — athlete check-in start (controleer athlete guide voor exact uur)" }
-      ]
-    },
-    {
-      day: "Vrijdag 10 juli",
-      tag: "Race week",
-      items: [
-        { time: "TBC", desc: "Expo & village open" },
-        { time: "TBC", desc: "Athlete briefing (verplicht volgens IRONMAN-reglement)" },
-        { time: "TBC", desc: "Vrije dag / rust / laatste losse trainingsritjes" }
+        { time: "12:00", desc: "Vertrek naar Remich" },
+        { time: "15:00 – 16:00", desc: "Registratie & gerief afhalen (expo/village)" },
+        { time: "17:00 – 18:00", desc: "Inchecken hotel (Parc Hotel Alvisse)" },
+        { time: "avond", desc: "Avondeten" },
+        { time: "23:00", desc: "Slapen" }
       ]
     },
     {
       day: "Zaterdag 11 juli",
-      tag: "Check-in",
+      tag: "Briefing & check-in",
       items: [
-        { time: "TBC", desc: "Verplichte fiets- & wisselzak check-in (T1/T2) — check exact uur in athlete guide" },
-        { time: "TBC", desc: "Laatste briefing / rustige avond, vroeg slapen" }
+        { time: "12:30", desc: "Aankomst Place Dr Fernand Kons, Remich" },
+        { time: "13:00", desc: "Athlete briefing (Engels)" },
+        { time: "14:00 – 17:00", desc: "Fiets & wisselzakken wegzetten (T1/T2)" },
+        { time: "avond", desc: "Terug naar hotel, avondeten" },
+        { time: "21:30", desc: "Slapen" }
       ]
     },
     {
       day: "Zondag 12 juli — RACEDAG",
       tag: "Race",
       items: [
-        { time: "05:15", desc: "Transitiezone opent (indicatief — check athlete guide)" },
-        { time: "08:00", desc: "Swim start — 1.9 km in de Moselle/Duitse kant" },
-        { time: "~09:15", desc: "Bike start — 90 km door Frankrijk" },
-        { time: "~12:30", desc: "Run start (indicatief) — 21.1 km in Luxemburg" },
-        { time: "11:55", desc: "Eerste finishers verwacht" },
+        { time: "06:00", desc: "Aankomst transitiezone — white bag drop-off, fietscheck, gels & drank klaarleggen" },
+        { time: "08:00", desc: "Swim start — 1.9 km" },
+        { time: "~08:40", desc: "Geschatte swim-finish + T1" },
+        { time: "~08:45", desc: "Bike start — 90.5 km" },
+        { time: "~12:00 – 12:20", desc: "Geschatte bike-finish + T2" },
+        { time: "~12:05 – 12:25", desc: "Run start — 21.1 km (3 ronden)" },
+        { time: "~14:15 – 14:45", desc: "Geschatte finish (totaal 6u15–6u45)" },
         { time: "TBC", desc: "Prijsuitreiking & finish line party" }
       ]
     },

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<title>Parcours — IRONMAN 70.3 Luxembourg</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div id="gate" class="gate">
+  <div class="gate-card">
+    <span class="dot"></span>
+    <h1>Privé site</h1>
+    <p>Vraag de toegangscode aan Gregory om het parcours te bekijken.</p>
+    <form id="gate-form">
+      <input id="gate-input" type="password" placeholder="Toegangscode" autocomplete="off" required />
+      <button class="btn accent" type="submit">Binnen</button>
+      <div id="gate-err" class="err"></div>
+    </form>
+  </div>
+</div>
+
+<div id="content" class="hidden">
+  <nav class="nav">
+    <div class="wrap">
+      <span class="brand"><span class="dot"></span> IM 70.3 Luxembourg</span>
+      <div class="links">
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink" href="schedule.html">Planning</a>
+        <a class="navlink" href="raceday.html">Racedag</a>
+        <a class="navlink active" href="course.html">Parcours</a>
+        <a class="navlink" href="logistics.html">Praktisch</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <span class="eyebrow">Zwemmen · Fietsen · Lopen</span>
+      <h1>Parcours</h1>
+      <p id="course-intro"></p>
+    </section>
+
+    <section class="section">
+      <div class="grid cols-3">
+        <div class="card">
+          <div class="k" id="course-swim-title">–</div>
+          <p id="course-swim-text" style="margin-top:8px"></p>
+        </div>
+        <div class="card">
+          <div class="k" id="course-bike-title">–</div>
+          <p id="course-bike-text" style="margin-top:8px"></p>
+        </div>
+        <div class="card">
+          <div class="k" id="course-run-title">–</div>
+          <p id="course-run-text" style="margin-top:8px"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Interactieve kaarten</h2>
+      <div class="card" style="padding:16px 16px 8px">
+        <div class="k" style="margin-bottom:10px">Zwemmen</div>
+        <div class="strava-embed-placeholder" data-embed-type="route" data-embed-id="3302232294299231004" data-full-width="true" data-style="standard" data-map-hash="14.2/49.53683/6.36186" data-from-embed="true" data-token="LTbv0qttElX1MX8i472yzq1F6s9ZcKxtQOTleQY5jHw"></div>
+      </div>
+      <div class="card" style="padding:16px 16px 8px; margin-top:16px">
+        <div class="k" style="margin-bottom:10px">Fietsen</div>
+        <div class="strava-embed-placeholder" data-embed-type="route" data-embed-id="3302232663965094716" data-full-width="true" data-style="standard" data-map-hash="8.86/49.5571/6.3305" data-from-embed="true" data-token="1aGVLMEGZJbeTTkElIALoz1flQPcsInus-CwQLyXHMw"></div>
+      </div>
+      <div class="card" style="padding:16px 16px 8px; margin-top:16px">
+        <div class="k" style="margin-bottom:10px">Lopen</div>
+        <div class="strava-embed-placeholder" data-embed-type="route" data-embed-id="3302233061777875740" data-units="metric" data-full-width="true" data-style="standard" data-map-hash="11.94/49.53308/6.3641" data-from-embed="false" data-token="rittTm2OfdLgVWoGKH8u4YubwX9p1OtGrAwUz4zTHzo"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Tip voor toeschouwers</h2>
+      <div class="card">
+        <p id="course-spectator-tip"></p>
+        <p style="margin:0"><a href="logistics.html">Alle kijkplekken &amp; praktische info →</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Wissels (T1 &amp; T2)</h2>
+      <div class="grid cols-2">
+        <div class="card" style="padding:0; overflow:hidden">
+          <img src="assets/img/transition1.webp" alt="Transitie 1 — zwemmen naar fietsen" style="display:block; width:100%; height:auto" />
+        </div>
+        <div class="card" style="padding:0; overflow:hidden">
+          <img src="assets/img/transition2.webp" alt="Transitie 2 — fietsen naar lopen" style="display:block; width:100%; height:auto" />
+        </div>
+      </div>
+      <p id="course-transition-text" style="margin-top:14px"></p>
+    </section>
+
+    <section class="section">
+      <h2>Locaties op de kaart</h2>
+      <div class="card">
+        <p style="margin-bottom:14px">Swim start en finish met exacte GPS-locatie vind je op de Racedag-pagina.</p>
+        <a href="raceday.html" class="btn accent" style="display:inline-block; width:auto">Bekijk locaties →</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <p><a id="course-official-link" target="_blank" rel="noopener">Officiële parcours-pagina van IRONMAN →</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Privé site voor vrienden &amp; familie · niet geïndexeerd door zoekmachines 🔒</p>
+    <p class="role-switch"><a href="admin.html">Admin-gedeelte</a> · <a href="#" id="logout-link">Log uit</a></p>
+  </footer>
+</div>
+
+<script src="assets/config.js"></script>
+<script src="assets/gate.js"></script>
+<script src="assets/app.js"></script>
+<script src="https://strava-embeds.com/embed.js"></script>
+<script>
+  window.renderPage = renderCourse;
+  initGate();
+  document.getElementById("logout-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    logoutFriends();
+  });
+</script>
+</body>
+</html>

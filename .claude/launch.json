@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "static-site",
+      "runtimeExecutable": "C:/Python312/python.exe",
+      "runtimeArgs": ["-m", "http.server", "8642"],
+      "port": 8642
+    }
+  ]
+}

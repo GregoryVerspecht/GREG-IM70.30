@@ -25,6 +25,13 @@ function startCountdown(targetIso, els) {
   setInterval(tick, 1000);
 }
 
+/* ---------------- TRACKER (gedeeld door Home & Racedag) ---------------- */
+function renderTrackerSteps(listId, c) {
+  const list = document.getElementById(listId);
+  if (!list) return;
+  list.innerHTML = c.trackerSteps.map((step) => `<li>${step}</li>`).join("");
+}
+
 /* ---------------- HOME ---------------- */
 function renderHome() {
   const c = window.CONFIG.event;
@@ -41,7 +48,6 @@ function renderHome() {
   document.getElementById("home-swim-start").textContent = c.swimStart;
   document.getElementById("home-goal").textContent = c.goalTime;
   document.getElementById("home-tracker-note").textContent = c.trackerNote;
-  document.getElementById("home-tracker-link").href = c.trackerUrl;
 
   startCountdown(c.raceDate, {
     d: document.getElementById("cd-d"),
@@ -83,6 +89,28 @@ function renderRaceday() {
   trackerBtn.href = c.trackerUrl;
   const officialBtn = document.getElementById("rd-official-link");
   officialBtn.href = c.officialSite;
+  document.getElementById("rd-tracker-appstore").href = c.trackerAppStoreUrl;
+  document.getElementById("rd-tracker-playstore").href = c.trackerPlayStoreUrl;
+  document.getElementById("rd-tracker-hidden-note").textContent = c.trackerHiddenNote;
+  renderTrackerSteps("rd-tracker-steps", c);
+  document.getElementById("rd-swimstart-map").href = c.swimStartMapUrl;
+  document.getElementById("rd-finish-name").textContent = c.finishName;
+  document.getElementById("rd-finish-map").href = c.finishMapUrl;
+}
+
+/* ---------------- PARCOURS ---------------- */
+function renderCourse() {
+  const c = window.CONFIG.course;
+  document.getElementById("course-intro").textContent = c.intro;
+  document.getElementById("course-swim-title").textContent = c.swim.title;
+  document.getElementById("course-swim-text").textContent = c.swim.text;
+  document.getElementById("course-bike-title").textContent = c.bike.title;
+  document.getElementById("course-bike-text").textContent = c.bike.text;
+  document.getElementById("course-run-title").textContent = c.run.title;
+  document.getElementById("course-run-text").textContent = c.run.text;
+  document.getElementById("course-spectator-tip").textContent = c.spectatorTip;
+  document.getElementById("course-transition-text").textContent = c.transition.text;
+  document.getElementById("course-official-link").href = c.officialCourseUrl;
 }
 
 /* ---------------- LOGISTICS ---------------- */
@@ -90,14 +118,34 @@ function renderLogistics() {
   const l = window.CONFIG.logistics;
   document.getElementById("lg-hotel-name").textContent = l.hotelName;
   document.getElementById("lg-hotel-address").textContent = l.hotelAddress;
+  document.getElementById("lg-hotel-link").href = l.hotelUrl;
   document.getElementById("lg-checkin").textContent = l.checkIn;
   document.getElementById("lg-checkout").textContent = l.checkOut;
   document.getElementById("lg-parking").textContent = l.parkingNote;
   document.getElementById("lg-travel").textContent = l.travelNote;
+  document.getElementById("lg-directions-link").href = l.directionsUrl;
   document.getElementById("lg-weather").textContent = l.weatherNote;
   document.getElementById("lg-emergency").textContent = l.emergencyContact;
+  document.getElementById("lg-shuttle-intro").textContent = l.shuttle.intro;
+  document.getElementById("lg-shuttle-lines").innerHTML = l.shuttle.lines
+    .map(
+      (s) => `
+      <div class="card">
+        <div class="k">Lijn ${s.label} — ${s.route}</div>
+        <p style="margin-top:8px; margin-bottom:2px"><strong>Heen:</strong> ${s.toRemich}</p>
+        <p style="margin-bottom:2px"><strong>Terug:</strong> ${s.fromRemich}</p>
+        <p style="margin-bottom:0; color:var(--ink-faint); font-size:.85rem">${s.frequency}</p>
+      </div>`
+    )
+    .join("");
   const list = document.getElementById("lg-viewing-list");
-  list.innerHTML = l.viewingSpots.map((v) => `<li><span class="desc">${v}</span></li>`).join("");
+  list.innerHTML = l.viewingSpots
+    .map((v) => {
+      const text = typeof v === "string" ? v : v.text;
+      const link = typeof v === "object" && v.mapUrl ? ` <a href="${v.mapUrl}" target="_blank" rel="noopener">(kaart →)</a>` : "";
+      return `<li><span class="desc">${text}</span>${link}</li>`;
+    })
+    .join("");
 }
 
 /* Router: elke pagina zet window.renderPage vóór gate.js dit aanroept */

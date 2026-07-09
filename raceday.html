@@ -30,6 +30,7 @@
         <a class="navlink" href="index.html">Home</a>
         <a class="navlink" href="schedule.html">Planning</a>
         <a class="navlink active" href="raceday.html">Racedag</a>
+        <a class="navlink" href="course.html">Parcours</a>
         <a class="navlink" href="logistics.html">Praktisch</a>
       </div>
     </div>
@@ -54,8 +55,18 @@
       <h2>Live volgen</h2>
       <div class="card">
         <p id="rd-tracker-note"></p>
-        <a id="rd-tracker-link" class="btn accent" target="_blank" rel="noopener" style="display:inline-block; width:auto; margin-right:10px">Open live tracker →</a>
-        <a id="rd-official-link" class="btn" target="_blank" rel="noopener" style="display:inline-block; width:auto; background:var(--ink)">Officiële race-site →</a>
+        <ol class="tracker-steps" id="rd-tracker-steps"></ol>
+        <p id="rd-tracker-hidden-note" class="tracker-hint"></p>
+        <div class="btn-row">
+          <a id="rd-tracker-appstore" class="btn" target="_blank" rel="noopener">📱 App Store</a>
+          <a id="rd-tracker-playstore" class="btn" target="_blank" rel="noopener">📱 Google Play</a>
+          <a id="rd-tracker-link" class="btn accent" target="_blank" rel="noopener">Web-tracker →</a>
+        </div>
+        <p style="margin-top:14px">Extra info zoals parking, verkeer en tijdslimieten vind je in de officiële supporters-gids van IRONMAN.</p>
+        <p>
+          <a id="rd-official-link" target="_blank" rel="noopener">Officiële race-site →</a>
+          · <a href="https://www.ironman.com/races/im703-luxembourg/supporters" target="_blank" rel="noopener">Officiële supporters-gids →</a>
+        </p>
       </div>
     </section>
 
@@ -65,6 +76,23 @@
         <div class="card"><div class="k">🇩🇪 Zwemmen</div><div class="v" id="rd-swim">–</div></div>
         <div class="card"><div class="k">🇫🇷 Fietsen</div><div class="v" id="rd-bike">–</div></div>
         <div class="card"><div class="k">🇱🇺 Lopen</div><div class="v" id="rd-run">–</div></div>
+      </div>
+      <p style="margin-top:14px"><a href="course.html">Volledig parcours in detail (route, hoogtemeters, kijktips) →</a></p>
+    </section>
+
+    <section class="section">
+      <h2>Locaties</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="k">Swim start</div>
+          <div class="v" style="font-size:1.05rem">Wintrange, Moselle</div>
+          <p style="margin-top:8px"><a id="rd-swimstart-map" target="_blank" rel="noopener">Open op Google Maps →</a></p>
+        </div>
+        <div class="card">
+          <div class="k">Finish</div>
+          <div class="v" style="font-size:1.05rem" id="rd-finish-name">–</div>
+          <p style="margin-top:8px"><a id="rd-finish-map" target="_blank" rel="noopener">Open op Google Maps →</a></p>
+        </div>
       </div>
     </section>
   </main>

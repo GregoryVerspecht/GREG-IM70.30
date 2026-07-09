@@ -87,9 +87,11 @@ main{ max-width: 1040px; margin: 0 auto; padding: 40px 20px 80px }
 
 /* ---------- Cards / grid ---------- */
 .grid{ display:grid; gap: 16px }
+.grid.cols-4{ grid-template-columns: repeat(4, 1fr) }
 .grid.cols-3{ grid-template-columns: repeat(3, 1fr) }
 .grid.cols-2{ grid-template-columns: repeat(2, 1fr) }
-@media (max-width: 720px){ .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr } }
+@media (max-width: 860px){ .grid.cols-4 { grid-template-columns: repeat(2, 1fr) } }
+@media (max-width: 720px){ .grid.cols-4, .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr } }
 
 .card{
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
@@ -139,6 +141,13 @@ main{ max-width: 1040px; margin: 0 auto; padding: 40px 20px 80px }
 .btn:hover{ opacity:.9 }
 .btn.accent{ background: var(--accent) }
 .err{ color: var(--accent); font-size: .82rem; min-height: 1.2em; margin-top: 8px }
+
+/* ---------- Tracker uitleg ---------- */
+.tracker-steps{ margin: 4px 0 16px; padding-left: 20px; color: var(--ink-soft) }
+.tracker-steps li{ margin-bottom: 8px; font-size: .95rem }
+.tracker-hint{ font-size: .82rem; color: var(--ink-faint); margin-bottom: 14px }
+.btn-row{ display:flex; gap:10px; flex-wrap:wrap }
+.btn-row .btn{ width:auto; display:inline-block }
 
 /* ---------- To-do (admin) ---------- */
 .todo-add{ display:flex; gap:8px; margin-bottom: 18px }
