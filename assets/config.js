@@ -24,7 +24,7 @@ window.CONFIG = {
     athleteName: "Greg",
     raceDate: "2026-07-12T08:00:00+02:00",     // startuur race — check athlete guide voor exacte wave-tijd
     swimStart: "08:00",
-    location: "Wintrange, Canton Remich, Luxemburg",
+    location: "Remich, Luxemburg",
     distances: { swim: "1.9 km", bike: "90 km", run: "21.1 km" },
     swimStartMapUrl: "https://www.google.com/maps/place/49%C2%B032'10.9%22N+6%C2%B021'35.8%22E/@49.536358,6.359951,17z",
     finishName: "Freibad Remich",
