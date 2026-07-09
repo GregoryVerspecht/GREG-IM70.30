@@ -83,7 +83,7 @@ small{ color: var(--ink-faint) }
 
 /* ---------- Layout sections ---------- */
 main{ max-width: 1040px; margin: 0 auto; padding: 40px 20px 80px }
-.section{ margin-bottom: 44px }
+.section{ margin-bottom: 44px; text-align:center }
 .eyebrow{
   text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight:700;
   color: var(--accent); margin-bottom: 8px; display:block;
@@ -122,16 +122,16 @@ main{ max-width: 1040px; margin: 0 auto; padding: 40px 20px 80px }
 .card .k{ font-size: .74rem; text-transform:uppercase; letter-spacing:.08em; color: var(--ink-faint); font-weight:700; margin-bottom:6px }
 .card .v{ font-size: 1.25rem; font-weight:800; letter-spacing:-0.01em }
 .card .v.big{ font-size: 2.1rem; color: var(--accent) }
-.card .tracker-steps, .card ul.timeline{ text-align:left }
+.card .tracker-steps{ list-style-position: inside; padding-left: 0 }
 
 /* ---------- Timeline ---------- */
-.day{ margin-bottom: 30px }
+.day{ margin-bottom: 30px; text-align:left }
 .day h3{
   display:flex; align-items:center; gap:10px; padding-bottom: 10px; margin-bottom: 14px;
   border-bottom: 1px solid var(--line);
 }
 .day h3 .tag{ font-size:.68rem; background: var(--ink); color:#fff; padding:3px 9px; border-radius: 999px; font-weight:700 }
-.timeline{ list-style:none; margin:0; padding:0; border-left: 2px solid var(--line); margin-left: 6px }
+.timeline{ list-style:none; margin:0; padding:0; border-left: 2px solid var(--line); margin-left: 6px; text-align:left }
 .timeline li{ position:relative; padding: 4px 0 16px 24px }
 .timeline li::before{
   content:""; position:absolute; left:-6.5px; top: 8px; width:11px; height:11px; border-radius:50%;
@@ -173,10 +173,10 @@ main{ max-width: 1040px; margin: 0 auto; padding: 40px 20px 80px }
 .btn-row .btn{ width:auto; display:inline-block }
 
 /* ---------- To-do (admin) ---------- */
-.todo-add{ display:flex; gap:8px; margin-bottom: 18px }
+.todo-add{ display:flex; gap:8px; margin-bottom: 18px; text-align:left }
 .todo-add input{ flex:1; padding: 11px 14px; border-radius: var(--radius-sm); border: 1px solid var(--line); font-size:.95rem }
 .todo-add button{ background: var(--accent-2); color:#fff; border:none; border-radius: var(--radius-sm); padding: 0 18px; font-weight:700; cursor:pointer }
-ul.todo-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px }
+ul.todo-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; text-align:left }
 ul.todo-list li{
   display:flex; align-items:center; gap:12px; background: var(--surface); border:1px solid var(--line);
   border-radius: var(--radius-sm); padding: 12px 14px;
