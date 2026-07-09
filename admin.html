@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<title>Admin — persoonlijke to-do</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div id="gate" class="gate">
+  <div class="gate-card">
+    <span class="dot" style="background:var(--accent-2)"></span>
+    <h1>Admin-gedeelte</h1>
+    <p>Enkel voor Gregory. Deze pagina staat niet gelinkt op de site en vraagt een aparte code.</p>
+    <form id="gate-form">
+      <input id="gate-input" type="password" placeholder="Admin-code" autocomplete="off" required />
+      <button class="btn" type="submit" style="background:var(--accent-2)">Binnen</button>
+      <div id="gate-err" class="err"></div>
+    </form>
+  </div>
+</div>
+
+<div id="content" class="hidden">
+  <nav class="nav">
+    <div class="wrap">
+      <span class="brand"><span class="dot" style="background:var(--accent-2)"></span> Admin — to-do</span>
+      <div class="links">
+        <a class="navlink" href="index.html">← Terug naar site</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <span class="eyebrow" style="color:var(--accent-2)">Privé — enkel voor jou</span>
+      <h1>Mijn to-do lijst</h1>
+      <p>Opgeslagen in de browser van dit toestel. Niet zichtbaar voor vrienden, niet gesynchroniseerd tussen toestellen.</p>
+    </section>
+
+    <section class="section">
+      <form id="todo-add-form" class="todo-add">
+        <input id="todo-add-input" type="text" placeholder="Nieuwe taak toevoegen..." />
+        <button type="submit">Voeg toe</button>
+      </form>
+      <ul class="todo-list" id="todo-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Admin-gedeelte · niet geïndexeerd · aparte toegangscode 🔒</p>
+    <p class="role-switch"><a href="index.html">Bekijk als vriend</a> · <a href="#" id="logout-admin-link">Log uit (admin)</a></p>
+  </footer>
+</div>
+
+<script src="assets/config.js"></script>
+<script src="assets/todo.js"></script>
+<script>
+  (function () {
+    const STORAGE_KEY = "im703_admin_ok";
+
+    async function sha256(str) {
+      const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+      return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+    }
+
+    function reveal() {
+      document.getElementById("gate").classList.add("hidden");
+      document.getElementById("content").classList.remove("hidden");
+      renderPage();
+    }
+
+    document.getElementById("logout-admin-link").addEventListener("click", function (e) {
+      e.preventDefault();
+      localStorage.removeItem(STORAGE_KEY);
+      location.reload();
+    });
+
+    if (localStorage.getItem(STORAGE_KEY) === "1") {
+      reveal();
+    } else {
+      const form = document.getElementById("gate-form");
+      const input = document.getElementById("gate-input");
+      const err = document.getElementById("gate-err");
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const hash = await sha256(input.value.trim());
+        if (hash === window.CONFIG.security.adminPassHash) {
+          localStorage.setItem(STORAGE_KEY, "1");
+          reveal();
+        } else {
+          err.textContent = "Foute code.";
+          input.value = "";
+          input.focus();
+        }
+      });
+    }
+  })();
+</script>
+</body>
+</html>

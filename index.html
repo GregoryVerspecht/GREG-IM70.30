@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<title>IRONMAN 70.3 Luxembourg — vrienden &amp; familie</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div id="gate" class="gate">
+  <div class="gate-card">
+    <span class="dot"></span>
+    <h1>Privé site</h1>
+    <p>Vraag de toegangscode aan Gregory om de planning, racedag-info en logistiek te bekijken.</p>
+    <form id="gate-form">
+      <input id="gate-input" type="password" placeholder="Toegangscode" autocomplete="off" required />
+      <button class="btn accent" type="submit">Binnen</button>
+      <div id="gate-err" class="err"></div>
+    </form>
+  </div>
+</div>
+
+<div id="content" class="hidden">
+  <nav class="nav">
+    <div class="wrap">
+      <span class="brand"><span class="dot"></span> IM 70.3 Luxembourg</span>
+      <div class="links">
+        <a class="navlink active" href="index.html">Home</a>
+        <a class="navlink" href="schedule.html">Planning</a>
+        <a class="navlink" href="raceday.html">Racedag</a>
+        <a class="navlink" href="logistics.html">Praktisch</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="badge-row">
+        <span class="badge">🇩🇪 Zwem</span>
+        <span class="badge">🇫🇷 Fiets</span>
+        <span class="badge">🇱🇺 Loop</span>
+      </div>
+      <span class="eyebrow" id="race-name">IRONMAN 70.3 Luxembourg</span>
+      <h1><span id="athlete-name">TODO: naam</span> gaat voor de finish 🏁</h1>
+      <p class="sub" id="race-tagline">Région Moselle — drie landen, één race.</p>
+      <p><span id="race-date-full"></span> · <span id="race-location"></span></p>
+
+      <div class="countdown" id="countdown">
+        <div class="box"><div class="num" id="cd-d">–</div><div class="lbl">dagen</div></div>
+        <div class="box"><div class="num" id="cd-h">–</div><div class="lbl">uur</div></div>
+        <div class="box"><div class="num" id="cd-m">–</div><div class="lbl">min</div></div>
+        <div class="box"><div class="num" id="cd-s">–</div><div class="lbl">sec</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="eyebrow">Racedag</span>
+      <h2>Volg mij live</h2>
+      <div class="grid cols-3">
+        <div class="card"><div class="k">Startnummer / bib</div><div class="v big" id="home-bib">–</div></div>
+        <div class="card"><div class="k">Swim start</div><div class="v big" id="home-swim-start">–</div></div>
+        <div class="card"><div class="k">Doeltijd</div><div class="v big" id="home-goal">–</div></div>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <p id="home-tracker-note"></p>
+        <a id="home-tracker-link" class="btn accent" target="_blank" rel="noopener" style="display:inline-block; width:auto">Open live tracker →</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Parcours in het kort</h2>
+      <div class="grid cols-3">
+        <div class="card"><div class="k">Zwemmen</div><div class="v" id="d-swim">–</div></div>
+        <div class="card"><div class="k">Fietsen</div><div class="v" id="d-bike">–</div></div>
+        <div class="card"><div class="k">Lopen</div><div class="v" id="d-run">–</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Snel naar</h2>
+      <div class="grid cols-3">
+        <div class="card"><div class="k">Dag per dag</div><div class="v"><a href="schedule.html">Planning →</a></div></div>
+        <div class="card"><div class="k">Bib &amp; tracker</div><div class="v"><a href="raceday.html">Racedag →</a></div></div>
+        <div class="card"><div class="k">Hotel &amp; kijkplekken</div><div class="v"><a href="logistics.html">Praktisch →</a></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Privé site voor vrienden &amp; familie · niet geïndexeerd door zoekmachines 🔒</p>
+    <p class="role-switch"><a href="admin.html">Admin-gedeelte</a> · <a href="#" id="logout-link">Log uit</a></p>
+  </footer>
+</div>
+
+<script src="assets/config.js"></script>
+<script src="assets/gate.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  window.renderPage = renderHome;
+  initGate();
+  document.getElementById("logout-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    logoutFriends();
+  });
+</script>
+</body>
+</html>

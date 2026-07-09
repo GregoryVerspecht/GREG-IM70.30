@@ -1,0 +1,165 @@
+/* ================================================================
+   IRONMAN 70.3 Luxembourg – site voor vrienden & familie
+   Clean, modern, minimalistisch design.
+   ================================================================ */
+
+:root{
+  --bg: #faf9f6;
+  --surface: #ffffff;
+  --ink: #16181d;
+  --ink-soft: #5b6069;
+  --ink-faint: #9a9fa8;
+  --line: #e8e5df;
+  --accent: #e2492f;      /* coral-rood */
+  --accent-ink: #ffffff;
+  --accent-2: #1f6f66;    /* diepteal, Moselle-rivier */
+  --accent-2-soft: #e7f2f0;
+  --accent-soft: #fbe9e5;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 1px 2px rgba(20,20,20,.04), 0 8px 24px rgba(20,20,20,.05);
+  --maxw: 880px;
+  font-size: 16px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3{ line-height:1.15; letter-spacing:-0.02em; margin: 0 0 .4em; font-weight:700 }
+h1{ font-size: clamp(1.9rem, 4.5vw, 2.9rem) }
+h2{ font-size: clamp(1.3rem, 2.6vw, 1.7rem); margin-top: 0 }
+h3{ font-size: 1.05rem }
+p{ margin: 0 0 .8em; color: var(--ink-soft) }
+a{ color: var(--accent); text-decoration:none }
+a:hover{ text-decoration:underline }
+small{ color: var(--ink-faint) }
+
+.wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0 20px }
+
+/* ---------- Nav ---------- */
+.nav{
+  position: sticky; top:0; z-index: 40;
+  background: rgba(250,249,246,.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding: 14px 20px; max-width: 1040px }
+.nav .brand{ font-weight:800; font-size: 1rem; color: var(--ink); letter-spacing:-0.02em; display:flex; align-items:center; gap:8px }
+.nav .brand .dot{ width:8px; height:8px; border-radius:50%; background: var(--accent); display:inline-block }
+.nav .links{ display:flex; gap: 4px; flex-wrap: wrap }
+.nav a.navlink{
+  color: var(--ink-soft); font-size: .92rem; font-weight:600; padding: 8px 12px; border-radius: 999px;
+}
+.nav a.navlink:hover{ background: var(--surface); text-decoration:none; color: var(--ink) }
+.nav a.navlink.active{ background: var(--ink); color:#fff }
+
+/* ---------- Layout sections ---------- */
+main{ max-width: 1040px; margin: 0 auto; padding: 40px 20px 80px }
+.section{ margin-bottom: 44px }
+.eyebrow{
+  text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; font-weight:700;
+  color: var(--accent); margin-bottom: 8px; display:block;
+}
+
+/* ---------- Hero ---------- */
+.hero{ padding: 56px 0 20px }
+.hero .badge-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom: 18px }
+.badge{
+  font-size: .78rem; font-weight:700; padding: 6px 12px; border-radius: 999px;
+  background: var(--accent-2-soft); color: var(--accent-2); border: 1px solid rgba(31,111,102,.15);
+}
+.hero .sub{ font-size: 1.05rem; max-width: 60ch }
+
+/* ---------- Countdown ---------- */
+.countdown{ display:flex; gap: 10px; margin: 28px 0; flex-wrap: wrap }
+.countdown .box{
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 18px; min-width: 84px; text-align:center; box-shadow: var(--shadow);
+}
+.countdown .box .num{ font-size: 1.9rem; font-weight:800; letter-spacing:-0.03em; font-variant-numeric: tabular-nums }
+.countdown .box .lbl{ font-size: .7rem; text-transform:uppercase; letter-spacing:.08em; color: var(--ink-faint); font-weight:700 }
+
+/* ---------- Cards / grid ---------- */
+.grid{ display:grid; gap: 16px }
+.grid.cols-3{ grid-template-columns: repeat(3, 1fr) }
+.grid.cols-2{ grid-template-columns: repeat(2, 1fr) }
+@media (max-width: 720px){ .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr } }
+
+.card{
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 20px 22px; box-shadow: var(--shadow);
+}
+.card .k{ font-size: .74rem; text-transform:uppercase; letter-spacing:.08em; color: var(--ink-faint); font-weight:700; margin-bottom:6px }
+.card .v{ font-size: 1.25rem; font-weight:800; letter-spacing:-0.01em }
+.card .v.big{ font-size: 2.1rem; color: var(--accent) }
+
+/* ---------- Timeline ---------- */
+.day{ margin-bottom: 30px }
+.day h3{
+  display:flex; align-items:center; gap:10px; padding-bottom: 10px; margin-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.day h3 .tag{ font-size:.68rem; background: var(--ink); color:#fff; padding:3px 9px; border-radius: 999px; font-weight:700 }
+.timeline{ list-style:none; margin:0; padding:0; border-left: 2px solid var(--line); margin-left: 6px }
+.timeline li{ position:relative; padding: 4px 0 16px 24px }
+.timeline li::before{
+  content:""; position:absolute; left:-6.5px; top: 8px; width:11px; height:11px; border-radius:50%;
+  background: var(--surface); border: 2px solid var(--accent);
+}
+.timeline .time{ font-weight:800; font-size:.85rem; color: var(--ink); margin-right:8px; font-variant-numeric: tabular-nums }
+.timeline .desc{ color: var(--ink-soft) }
+
+/* ---------- Forms / gate ---------- */
+.gate{
+  position: fixed; inset:0; z-index: 100; background: var(--bg);
+  display:flex; align-items:center; justify-content:center; padding: 20px;
+}
+.gate-card{
+  background: var(--surface); border:1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 36px 32px; max-width: 380px; width:100%; text-align:center;
+}
+.gate-card .dot{ width:10px; height:10px; border-radius:50%; background: var(--accent); display:inline-block; margin-bottom: 14px }
+.gate-card h1{ font-size: 1.3rem; margin-bottom: 6px }
+.gate-card p{ font-size: .92rem }
+.gate-card input[type=password], .gate-card input[type=text]{
+  width:100%; padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--line);
+  font-size: 1rem; margin: 14px 0 10px; background: var(--bg); text-align:center; letter-spacing: .05em;
+}
+.gate-card input:focus{ outline: 2px solid var(--accent); outline-offset:1px }
+.btn{
+  display:inline-block; background: var(--ink); color:#fff; border:none; padding: 12px 20px;
+  border-radius: 999px; font-weight:700; font-size: .92rem; cursor:pointer; width:100%;
+}
+.btn:hover{ opacity:.9 }
+.btn.accent{ background: var(--accent) }
+.err{ color: var(--accent); font-size: .82rem; min-height: 1.2em; margin-top: 8px }
+
+/* ---------- To-do (admin) ---------- */
+.todo-add{ display:flex; gap:8px; margin-bottom: 18px }
+.todo-add input{ flex:1; padding: 11px 14px; border-radius: var(--radius-sm); border: 1px solid var(--line); font-size:.95rem }
+.todo-add button{ background: var(--accent-2); color:#fff; border:none; border-radius: var(--radius-sm); padding: 0 18px; font-weight:700; cursor:pointer }
+ul.todo-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px }
+ul.todo-list li{
+  display:flex; align-items:center; gap:12px; background: var(--surface); border:1px solid var(--line);
+  border-radius: var(--radius-sm); padding: 12px 14px;
+}
+ul.todo-list li.done .txt{ text-decoration: line-through; color: var(--ink-faint) }
+ul.todo-list li .txt{ flex:1; font-size:.95rem }
+ul.todo-list li .del{ color: var(--ink-faint); cursor:pointer; font-size: 1.1rem; border:none; background:none }
+ul.todo-list li .del:hover{ color: var(--accent) }
+ul.todo-list li input[type=checkbox]{ width:18px; height:18px; accent-color: var(--accent-2) }
+
+/* ---------- Footer ---------- */
+footer{ border-top: 1px solid var(--line); padding: 26px 20px; text-align:center }
+footer p{ font-size: .82rem; color: var(--ink-faint); margin:0 }
+footer .role-switch{ margin-top: 10px; font-size: .78rem }
+footer .role-switch a{ color: var(--ink-faint) }
+footer .role-switch a:hover{ color: var(--ink) }
+
+.hidden{ display:none !important }

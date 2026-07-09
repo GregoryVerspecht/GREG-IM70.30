@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<title>Praktisch — IRONMAN 70.3 Luxembourg</title>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div id="gate" class="gate">
+  <div class="gate-card">
+    <span class="dot"></span>
+    <h1>Privé site</h1>
+    <p>Vraag de toegangscode aan Gregory om hotel &amp; praktische info te bekijken.</p>
+    <form id="gate-form">
+      <input id="gate-input" type="password" placeholder="Toegangscode" autocomplete="off" required />
+      <button class="btn accent" type="submit">Binnen</button>
+      <div id="gate-err" class="err"></div>
+    </form>
+  </div>
+</div>
+
+<div id="content" class="hidden">
+  <nav class="nav">
+    <div class="wrap">
+      <span class="brand"><span class="dot"></span> IM 70.3 Luxembourg</span>
+      <div class="links">
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink" href="schedule.html">Planning</a>
+        <a class="navlink" href="raceday.html">Racedag</a>
+        <a class="navlink active" href="logistics.html">Praktisch</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <span class="eyebrow">Voor vrienden &amp; familie</span>
+      <h1>Praktische info</h1>
+      <p>Verblijf, parking en de beste plekken om aan te moedigen.</p>
+    </section>
+
+    <section class="section">
+      <h2>Verblijf</h2>
+      <div class="grid cols-2">
+        <div class="card"><div class="k">Hotel / verblijf</div><div class="v" id="lg-hotel-name">–</div><p id="lg-hotel-address" style="margin-top:8px"></p></div>
+        <div class="card"><div class="k">Check-in / check-out</div><div class="v" style="font-size:1.05rem"><span id="lg-checkin"></span> → <span id="lg-checkout"></span></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Onderweg</h2>
+      <div class="grid cols-2">
+        <div class="card"><div class="k">Parking</div><p id="lg-parking"></p></div>
+        <div class="card"><div class="k">Zelf op weg</div><p id="lg-travel"></p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Beste kijkplekken</h2>
+      <ul class="timeline" id="lg-viewing-list"></ul>
+    </section>
+
+    <section class="section">
+      <div class="grid cols-2">
+        <div class="card"><div class="k">Weer</div><p id="lg-weather"></p></div>
+        <div class="card"><div class="k">Noodcontact</div><p id="lg-emergency"></p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Privé site voor vrienden &amp; familie · niet geïndexeerd door zoekmachines 🔒</p>
+    <p class="role-switch"><a href="admin.html">Admin-gedeelte</a> · <a href="#" id="logout-link">Log uit</a></p>
+  </footer>
+</div>
+
+<script src="assets/config.js"></script>
+<script src="assets/gate.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  window.renderPage = renderLogistics;
+  initGate();
+  document.getElementById("logout-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    logoutFriends();
+  });
+</script>
+</body>
+</html>
