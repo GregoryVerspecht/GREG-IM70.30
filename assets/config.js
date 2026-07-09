@@ -97,23 +97,30 @@ window.CONFIG = {
   schedule: [
     {
       day: "Vrijdag 10 juli",
-      tag: "Aankomst",
+      tag: "Aankomst & check-in IM70.3 + hotel",
       items: [
         { time: "12:00", desc: "Vertrek naar Remich" },
         { time: "15:00 – 16:00", desc: "Registratie & gerief afhalen (expo/village)" },
         { time: "17:00 – 18:00", desc: "Inchecken hotel (Parc Hotel Alvisse)" },
-        { time: "avond", desc: "Avondeten" },
+        { time: "18:00 – 23:00", desc: "Hotel | Douche | Avondeten (carbs) | Ontspannen | Zwembad" },
         { time: "23:00", desc: "Slapen" }
       ]
     },
     {
       day: "Zaterdag 11 juli",
-      tag: "Briefing & check-in",
+      tag: "Briefing & materiaal klaarzetten",
       items: [
+        { time: "07:00 - 08:00", desc: "Opstaan" },
+        { time: "08:00 - 09:00", desc: "Ontbijt" },
+        { time: "10:00 - 11:00", desc: "Shake out run" },
+        { time: "11:00 - 12:00", desc: "Lunch - carbs" },
+        { time: "12:00 - 12:30", desc: "Naar Place Dr Fernand Kons, Remich" },
         { time: "12:30", desc: "Aankomst Place Dr Fernand Kons, Remich" },
         { time: "13:00", desc: "Athlete briefing (Engels)" },
         { time: "14:00 – 17:00", desc: "Fiets & wisselzakken wegzetten (T1/T2)" },
-        { time: "avond", desc: "Terug naar hotel, avondeten" },
+        { time: "14:00 – 17:00", desc: "Ontbijt fixen + terug naar hotel" },
+        { time: "18:00 – 19:30", desc: "Avondeten" },
+        { time: "19:30 – 21:30", desc: "Ontspannen" },
         { time: "21:30", desc: "Slapen" }
       ]
     },
@@ -121,6 +128,8 @@ window.CONFIG = {
       day: "Zondag 12 juli — RACEDAG",
       tag: "Race",
       items: [
+        { time: "04:30 - 05:15", desc: "opstaan en ontbijt" },
+        { time: "05:15", desc: "Vertrek naar Remich" },
         { time: "06:00", desc: "Aankomst transitiezone — white bag drop-off, fietscheck, gels & drank klaarleggen" },
         { time: "08:00", desc: "Swim start — 1.9 km" },
         { time: "~08:40", desc: "Geschatte swim-finish + T1" },
