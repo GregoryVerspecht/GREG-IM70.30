@@ -154,6 +154,8 @@ function renderLogistics() {
       </div>`
     )
     .join("");
+  const hotspotsIntro = document.getElementById("lg-hotspots-intro");
+  if (hotspotsIntro) hotspotsIntro.textContent = l.hotspotsIntro;
   const list = document.getElementById("lg-viewing-list");
   list.innerHTML = l.viewingSpots
     .map((v) => {

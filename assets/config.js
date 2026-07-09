@@ -85,10 +85,11 @@ window.CONFIG = {
         { label: "C", route: "Besch (D) ↔ Nennig / Remich", toRemich: "04:55 – 19:55", fromRemich: "04:55 – 19:55 (beide richtingen doorlopend)", frequency: "elke 10 min" }
       ]
     },
+    hotspotsIntro: "IRONMAN 70.3 Luxembourg is een groot feest in het hart van Europa, met duizenden atleten. Bekijk de start vanaf de Moselle, kom naar de tribunes in de finishzone en moedig de atleten aan langs het zwem-, fiets- en loopparcours — beleef de IRONMAN-sfeer!",
     viewingSpots: [
-      { text: "Start/finish-zone Remich (Freibad Remich) — beste sfeer, groot scherm en speaker", mapUrl: "https://www.google.com/maps/place/Freibad+Remich/@49.5399002,6.3612563,714m" },
-      "TODO: kijkplek op het fietsparcours (Frankrijk-kant)",
-      "TODO: kijkplek op het loopparcours (Luxemburg-kant)"
+      { text: "🏊 Zwemmen — langs de Moselle. De atleten zwemmen er twee keer voorbij." },
+      { text: "🚴 Fietsen — waar de L146 afdraait van de N10. Hier zie je de atleten drie keer: eerst langs de Moselle naar het keerpunt, daarna klimmen ze door de wijngaarden op de L146." },
+      { text: "🏃 Lopen — finishzone rond het openluchtzwembad (Freibad) in Remich. Moedig aan in elk van de 3 looprondes of zie je atleet finishen.", mapUrl: "https://www.google.com/maps/place/Freibad+Remich/@49.5399002,6.3612563,714m" }
     ],
     weatherNote: "Check het weerbericht enkele dagen voor vertrek — Moselle-vallei kan warm zijn in juli.",
     emergencyContact: "TODO: noodcontact naam + nummer"
