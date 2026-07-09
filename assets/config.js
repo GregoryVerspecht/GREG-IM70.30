@@ -96,60 +96,68 @@ window.CONFIG = {
   },
 
   schedule: [
-    {
-      day: "Vrijdag 10 juli",
-      tag: "Aankomst & check-in IM70.3 + hotel",
-      items: [
-        { time: "12:00", desc: "Vertrek naar Remich" },
-        { time: "15:00 – 16:00", desc: "Registratie & gerief afhalen (expo/village)" },
-        { time: "17:00 – 18:00", desc: "Inchecken hotel (Parc Hotel Alvisse)" },
-        { time: "18:00 – 23:00", desc: "Hotel | Douche | Avondeten (carbs) | Ontspannen | Zwembad" },
-        { time: "23:00", desc: "Slapen" }
-      ]
-    },
-    {
-      day: "Zaterdag 11 juli",
-      tag: "Briefing & materiaal klaarzetten",
-      items: [
-        { time: "07:00 - 08:00", desc: "Opstaan" },
-        { time: "08:00 - 09:00", desc: "Ontbijt" },
-        { time: "10:00 - 11:00", desc: "Shake out run" },
-        { time: "11:00 - 12:00", desc: "Lunch - carbs" },
-        { time: "12:00 - 12:30", desc: "Naar Place Dr Fernand Kons, Remich" },
-        { time: "12:30", desc: "Aankomst Place Dr Fernand Kons, Remich" },
-        { time: "13:00", desc: "Athlete briefing (Engels)" },
-        { time: "14:00 – 17:00", desc: "Fiets & wisselzakken wegzetten (T1/T2)" },
-        { time: "14:00 – 17:00", desc: "Ontbijt fixen + terug naar hotel" },
-        { time: "18:00 – 19:30", desc: "Avondeten" },
-        { time: "19:30 – 21:30", desc: "Ontspannen" },
-        { time: "21:30", desc: "Slapen" }
-      ]
-    },
-    {
-      day: "Zondag 12 juli — RACEDAG",
-      tag: "Race",
-      items: [
-        { time: "04:30 - 05:15", desc: "opstaan en ontbijt" },
-        { time: "05:15", desc: "Vertrek naar Remich" },
-        { time: "06:00", desc: "Aankomst transitiezone — white bag drop-off, fietscheck, gels & drank klaarleggen" },
-        { time: "08:00", desc: "Swim start — 1.9 km" },
-        { time: "~08:40", desc: "Geschatte swim-finish + T1" },
-        { time: "~08:45", desc: "Bike start — 90.5 km" },
-        { time: "~12:00 – 12:20", desc: "Geschatte bike-finish + T2" },
-        { time: "~12:05 – 12:25", desc: "Run start — 21.1 km (3 ronden)" },
-        { time: "~14:15 – 14:45", desc: "Geschatte finish (totaal 6u15–6u45)" },
-        { time: "TBC", desc: "Prijsuitreiking & finish line party" }
-      ]
-    },
-    {
-      day: "Maandag 13 juli",
-      tag: "Vertrek",
-      items: [
-        { time: "TBC", desc: "Fiets & materiaal ophalen" },
-        { time: "TBC", desc: "Vertrek / terugreis" }
-      ]
-    }
-  ],
+  {
+    day: "Vrijdag 10 juli",
+    tag: "Aankomst & check-in IM70.3 + hotel",
+    items: [
+      { time: "12:00", desc: "Vertrek naar Remich" },
+      { time: "15:00 – 16:00", desc: "Registratie & gerief afhalen (expo/village)" },
+      { time: "17:00 – 18:00", desc: "Inchecken hotel (Parc Hotel Alvisse)" },
+      { time: "18:00 – 23:00", desc: "Hotel | Douche | Avondeten (carbs) | Ontspannen | Zwembad" },
+      { time: "23:00", desc: "Slapen" }
+    ]
+  },
+  {
+    day: "Zaterdag 11 juli",
+    tag: "Briefing & materiaal klaarzetten",
+    items: [
+      { time: "07:00 - 08:00", desc: "Opstaan" },
+      { time: "08:00 - 09:00", desc: "Ontbijt" },
+      { time: "10:00 - 11:00", desc: "Shake out run" },
+      { time: "11:00 - 12:00", desc: "Lunch - carbs" },
+      { time: "12:00 - 12:30", desc: "Naar Place Dr Fernand Kons, Remich" },
+      { time: "12:30", desc: "Aankomst Place Dr Fernand Kons, Remich" },
+      { time: "13:00", desc: "Athlete briefing (Engels)" },
+      { time: "14:00 - 15:00", desc: "Fiets & wisselzakken wegzetten (T1/T2)" },
+      { time: "15:00 - 16:00", desc: "Boodschappen/ontbijt voor racedag fixen" },
+      { time: "16:00 - 17:00", desc: "Terug naar hotel" },
+      { time: "18:00 – 19:30", desc: "Avondeten" },
+      { time: "19:30 – 21:30", desc: "Ontspannen" },
+      { time: "21:30", desc: "Slapen" }
+    ]
+  },
+  {
+    day: "Zondag 12 juli — RACEDAG",
+    tag: "Race",
+    items: [
+      { time: "04:30 - 05:15", desc: "Opstaan en ontbijt" },
+      { time: "05:15", desc: "Vertrek naar Remich" },
+      { time: "06:00", desc: "Aankomst transitiezone — white bag drop-off, fietscheck, gels & drank klaarleggen" },
+      { time: "~08:05 – 08:15", desc: "Swim start — 1.9 km (jouw wave)" },
+      { time: "~08:45 – 09:00", desc: "Geschatte swim-finish + T1" },
+      { time: "~08:50 – 09:00", desc: "Bike start — 90.5 km" },
+      { time: "~12:00 – 12:40", desc: "Geschatte bike-finish + T2" },
+      { time: "~12:05 – 12:45", desc: "Run start — 21.1 km (3 ronden)" },
+      { time: "~14:20 – 15:10", desc: "Geschatte finish (totaal 6u15–6u50)" },
+      { time: "~15:00 – 16:00", desc: "Omkleden + materiaal" },
+      { time: "16:00 – 17:30", desc: "Prijsuitreiking & finish line party (indien van toepassing)" },
+      { time: "vóór 18:00", desc: "Fiets & materiaal ophalen (T2 sluit om 18:00)" },
+      { time: "18:00 – 19:00", desc: "Terug naar hotel en avondeten familie en vrienden" }
+    ]
+  },
+  {
+    day: "Maandag 13 juli",
+    tag: "Vertrek",
+    items: [
+      { time: "08:30 – 09:00", desc: "Rustig opstaan" },
+      { time: "09:00 – 09:30", desc: "Douche" },
+      { time: "09:30 – 10:30", desc: "Ontbijt (hotel)" },
+      { time: "10:30 – 11:30", desc: "Inpakken" },
+      { time: "11:30 – 12:00", desc: "Checkout" },
+      { time: "12:00", desc: "Vertrek / terugreis naar huis" }
+    ]
+  }
+],
 
   // ---- ADMIN-WACHTWOORD (SHA-256 hash, geen leesbare tekst) ----
   // Standaard: admin-code = "IM70ADMIN2026" — PAS DIT AAN, zie instructies bovenaan dit bestand.
