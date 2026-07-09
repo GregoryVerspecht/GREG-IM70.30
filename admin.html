@@ -53,13 +53,30 @@
     <section class="section">
       <span class="eyebrow" style="color:var(--accent-2)">Privé — enkel voor jou</span>
       <h1>Race-strategie</h1>
-      <p>Wat in welke tas, en wanneer eten/drinken. Vul de TODO's hieronder in via <code>assets/config.js</code> (<code>strategy</code>).</p>
-      <div class="grid cols-3" id="strategy-bags"></div>
+      <p>Voeding &amp; pacing — Maurten, getest op de brick van 4 juli. Gewoon uitvoeren.</p>
     </section>
 
     <section class="section">
-      <h2>Voeding &amp; drank</h2>
-      <div class="grid cols-3" id="strategy-nutrition"></div>
+      <h2>Voeding in één oogopslag</h2>
+      <div class="grid cols-4" id="strategy-totals"></div>
+      <p id="strategy-target" style="margin-top:14px; font-weight:600"></p>
+      <div class="card" style="text-align:left; margin-top:8px">
+        <div class="k">Waar zit wat</div>
+        <ul class="timeline" style="margin-top:12px" id="strategy-placement"></ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Voedingsschema</h2>
+      <div class="grid cols-2" id="strategy-fuel-phases"></div>
+    </section>
+
+    <section class="section">
+      <h2>Pacing — traag starten, snel eindigen</h2>
+      <div class="grid cols-3" id="strategy-pacing"></div>
+      <div class="card" style="margin-top:16px; border-color:var(--accent-2); background:var(--accent-2-soft)">
+        <p id="strategy-keytip" style="margin:0; color:var(--ink)"></p>
+      </div>
     </section>
   </main>
 

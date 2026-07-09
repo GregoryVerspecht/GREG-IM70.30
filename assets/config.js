@@ -167,37 +167,73 @@ window.CONFIG = {
 
   // ---- RACE-STRATEGIE (enkel zichtbaar op /admin.html) ----
   strategy: {
-    bags: [
+    // Doeltijd basis: ~6u15–6u45. Alles Maurten (getest op brick 4 juli).
+    fuelTotals: [
+      { label: "Drink mix", value: "3 bidons", note: "Maurten 320 · 240 g carbs" },
+      { label: "Gels fiets", value: "2–3", note: "Maurten Gel 100" },
+      { label: "Gels loop", value: "4", note: "Maurten Gel 100" },
+      { label: "Cafeïne", value: "2 gels", note: "einde fiets + helft loop" }
+    ],
+    fuelTarget: "Fiets: 70–80 g carbs/u · 500–750 ml/u  —  Loop: 30–50 g carbs/u · water elke post",
+    placement: [
+      "3× Maurten 320 — voorgemengde bidons, klaar op de fiets",
+      "2–3× Gel 100 — bike-vak (toptube / achterzak)",
+      "4× Gel 100 — loop-riem / vest (waarvan 1 cafeïne)"
+    ],
+    fuelPhases: [
       {
-        label: "T1-tas (zwem → fiets)",
-        items: [
-          "TODO: helm",
-          "TODO: fietsschoenen",
-          "TODO: zonnebril",
-          "TODO: race-riem met nummer"
+        title: "Fiets — 90,5 km (~3u15–3u35)",
+        rows: [
+          { t: "0–5 min", a: "Alleen water, settelen — nog geen fuel" },
+          { t: "5–70 min", a: "Bidon 1 (Maurten 320), slokjes elke 5–10 min" },
+          { t: "~45 min", a: "Gel 1" },
+          { t: "70–140 min", a: "Bidon 2 (Maurten 320)" },
+          { t: "~110 min", a: "Gel 2" },
+          { t: "140–200 min", a: "Bidon 3 (Maurten 320) — laatste 15–20 min rustiger" },
+          { t: "~170 min", a: "☕ Cafeïne-gel (einde fiets)" }
         ]
       },
       {
-        label: "T2-tas (fiets → loop)",
-        items: [
-          "TODO: loopschoenen",
-          "TODO: pet / zonnebril-wissel",
-          "TODO: extra gels"
-        ]
-      },
-      {
-        label: "White bag / special needs",
-        items: [
-          "TODO: extra nutrition",
-          "TODO: extra kledij bij regen"
+        title: "Loop — 21,1 km (~2u16–2u23)",
+        rows: [
+          { t: "0–15 min", a: "Geen gel — benen laten wennen" },
+          { t: "~20 min", a: "Gel 1" },
+          { t: "~50 min", a: "☕ Cafeïne-gel (± helft loop)" },
+          { t: "~80 min", a: "Gel 3" },
+          { t: "~110 min", a: "Gel 4 (indien nog nodig)" },
+          { t: "elke post", a: "Water, kort wandelen om goed te drinken" }
         ]
       }
     ],
-    nutrition: [
-      { moment: "Voor de start", plan: "TODO: bv. ontbijt om 05:00, laatste gel 15 min voor start" },
-      { moment: "Fiets", plan: "TODO: bv. elke 20 min een gel + slokken water/sportdrank" },
-      { moment: "Loop", plan: "TODO: bv. om de 5 km gel of water aan bevoorradingspost" }
-    ]
+    pacing: [
+      {
+        title: "Zwemmen — 1,9 km (~38–41 min)",
+        rows: [
+          { seg: "0–300 m", target: "2:15–2:20 /100m", note: "Bewust trager, rustig ademen" },
+          { seg: "300–1500 m", target: "2:05–2:10 /100m", note: "Ritme, buoyancy uitbuiten" },
+          { seg: "laatste 400 m", target: "2:00–2:05 /100m", note: "Optrekken richting T1" }
+        ]
+      },
+      {
+        title: "Fiets — 90,5 km (negative split)",
+        rows: [
+          { seg: "0–10 km", target: "105–115 W", note: "Benen openen na de zwem" },
+          { seg: "10–35 km", target: "117–125 W", note: "Opbouwen, niet meeslepen" },
+          { seg: "35–75 km", target: "120–130 W", note: "Heuvels: cap 150–155 W" },
+          { seg: "75–90 km", target: "125–135 W", note: "Snel eindigen" }
+        ]
+      },
+      {
+        title: "Lopen — 21,1 km (negative split)",
+        rows: [
+          { seg: "0–3 km", target: "6:45–7:00 /km", note: "Bewust traag starten" },
+          { seg: "3–10 km", target: "6:35–6:45 /km", note: "Geleidelijk zakken" },
+          { seg: "10–16 km", target: "6:25–6:35 /km", note: "Comfortabel hard" },
+          { seg: "16–21,1 km", target: "6:15–6:25 /km", note: "Versnellen als het lukt" }
+        ]
+      }
+    ],
+    keyTip: "Grootste winst: start de eerste 3 km van de loop bewust 20–30 s/km trager dan je targetpace — zo vermijd je de crash rond km 12–15."
   },
 
   todoDefaults: [

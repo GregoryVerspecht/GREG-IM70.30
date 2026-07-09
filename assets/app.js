@@ -169,30 +169,63 @@ function renderLogistics() {
 /* ---------------- STRATEGIE (admin) ---------------- */
 function renderStrategy() {
   const s = window.CONFIG.strategy;
-  const bagsWrap = document.getElementById("strategy-bags");
-  if (bagsWrap) {
-    bagsWrap.innerHTML = s.bags
+
+  const totals = document.getElementById("strategy-totals");
+  if (totals) {
+    totals.innerHTML = s.fuelTotals
       .map(
-        (bag) => `
+        (t) => `
         <div class="card">
-          <div class="k">${bag.label}</div>
-          <ul style="text-align:left; margin:8px 0 0; padding-left:20px">
-            ${bag.items.map((item) => `<li>${item}</li>`).join("")}
+          <div class="k">${t.label}</div>
+          <div class="v big">${t.value}</div>
+          <p style="margin:6px 0 0; font-size:.82rem; color:var(--ink-faint)">${t.note}</p>
+        </div>`
+      )
+      .join("");
+  }
+
+  const target = document.getElementById("strategy-target");
+  if (target) target.textContent = s.fuelTarget;
+
+  const placement = document.getElementById("strategy-placement");
+  if (placement) {
+    placement.innerHTML = s.placement.map((p) => `<li><span class="desc">${p}</span></li>`).join("");
+  }
+
+  const phases = document.getElementById("strategy-fuel-phases");
+  if (phases) {
+    phases.innerHTML = s.fuelPhases
+      .map(
+        (ph) => `
+        <div class="card" style="text-align:left">
+          <div class="k">${ph.title}</div>
+          <ul class="timeline" style="margin-top:14px">
+            ${ph.rows.map((r) => `<li><span class="time">${r.t}</span><span class="desc">${r.a}</span></li>`).join("")}
           </ul>
         </div>`
       )
       .join("");
   }
-  const nutritionWrap = document.getElementById("strategy-nutrition");
-  if (nutritionWrap) {
-    nutritionWrap.innerHTML = s.nutrition
+
+  const pacing = document.getElementById("strategy-pacing");
+  if (pacing) {
+    pacing.innerHTML = s.pacing
       .map(
-        (n) => `
-        <div class="card">
-          <div class="k">${n.moment}</div>
-          <p style="margin-top:8px">${n.plan}</p>
+        (p) => `
+        <div class="card" style="text-align:left">
+          <div class="k">${p.title}</div>
+          <ul class="timeline" style="margin-top:14px">
+            ${p.rows
+              .map(
+                (r) => `<li><span class="time">${r.seg}</span><span class="desc"><strong>${r.target}</strong> — ${r.note}</span></li>`
+              )
+              .join("")}
+          </ul>
         </div>`
       )
       .join("");
   }
+
+  const keyTip = document.getElementById("strategy-keytip");
+  if (keyTip) keyTip.textContent = s.keyTip;
 }
